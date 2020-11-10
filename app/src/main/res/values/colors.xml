@@ -6,4 +6,6 @@
     <color name="fundoPadrao">#dff1f7</color>
     <color name="clicarCor">#0000ff</color>
     <color name="fundoFaixa">#81f0fc</color>
+    <color name="cinzaLetra">#a0a3a3</color>
+    <color name="branco">#ffffff</color>
 </resources>

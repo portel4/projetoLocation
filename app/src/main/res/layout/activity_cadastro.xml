@@ -5,7 +5,7 @@
     android:background="@color/fundoPadrao"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CadastroActivity">
+    tools:context=".ui.CadastroActivity">
 
     <TextView
         android:id="@+id/textViewTitulo"

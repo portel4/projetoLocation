@@ -39,6 +39,8 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin);
         textViewNovoCadastro = findViewById(R.id.textViewNovoCadastro);
 
+        usuarioCorrente = new Usuario();
+
         usuarioViewModel = new ViewModelProvider(this).get(UsuarioViewModel.class);
 
         usuarioViewModel.getUsuario().observe(this, new Observer<Usuario>() {
@@ -83,15 +85,15 @@ public class LoginActivity extends AppCompatActivity {
 
     private void bloquear(){
     btnLogin.setEnabled(false);
-    btnLogin.setBackgroundColor(getResources().getColor(R.color.cinzaLetra));
-    btnLogin.setTextColor(getResources().getColor(R.color.branco));
+    btnLogin.setBackgroundColor(getColor(R.color.cinzaLetra));
+    btnLogin.setTextColor(getColor(R.color.branco));
     textViewNovoCadastro.setVisibility(View.VISIBLE);
 
     }
 
     private void desbloquear(){
         btnLogin.setEnabled(true);
-        btnLogin.setBackgroundColor(getResources().getColor(R.color.fundoFaixa));
+        btnLogin.setBackgroundColor(getColor(R.color.fundoFaixa));
         textViewNovoCadastro.setVisibility(View.GONE);
     }
 

@@ -7,20 +7,21 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import com.example.location_places.R;
+import com.example.location_places.model.Local;
+import com.example.location_places.model.Usuario;
+import com.example.location_places.model.UsuarioViewModel;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CadastroLocalFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class CadastroLocalFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;

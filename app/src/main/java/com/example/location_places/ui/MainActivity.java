@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.inserir:
                         replaceFragment(R.id.frameLayoutMain,
-                                LocaisFragment.newInstance("",""),
+                                LocaisFragment.newInstance("",null),
                                 "INSERIRLOCAISFRAGMENT",
                                 "INSERIRLOCAIS");
                         return true;

@@ -8,4 +8,6 @@
     <color name="fundoFaixa">#81f0fc</color>
     <color name="cinzaLetra">#a0a3a3</color>
     <color name="branco">#ffffff</color>
+    <color name="azul">#320098D4</color>
+    <color name="azulescuro">#3F51B5</color>
 </resources>

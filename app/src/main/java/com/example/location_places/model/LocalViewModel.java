@@ -32,7 +32,7 @@ public class LocalViewModel extends AndroidViewModel {
     public void salvarLocal(Local local){
         localRepository.salvarLocal(local);
     }
-   // public void alterarLocal(Local local){
-   //     localRepository.alterarLocal(local);
-   // }
+    public void alterarLocal(Local local){
+        localRepository.alterarLocal(local);
+    }
 }

@@ -75,29 +75,29 @@ public class LocalRepository {
                     }
                 });
     }
-   // public void alterarLocal(Local local){
-   //     LocalPut localPut = new LocalPut(local.getDescricao(),local.getLatitude(),
-   //             local.getLongitude());
-    //     localService.alterarLocal(local.getData(),localPut)
-   //            .enqueue(new Callback<ResponseBody>() {
-    //               @Override
+    public void alterarLocal(Local local){
+        LocalPut localPut = new LocalPut(local.getDescricao(),local.getLatitude(),
+                local.getLongitude());
+         localService.alterarLocal(local.getData(),localPut)
+               .enqueue(new Callback<ResponseBody>() {
+                   @Override
 
-    //                public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
 
-    //                  if (response.body() != null) {
-    //                      Log.d("RESPOSTA", "tenho resultado-->"+response.body());
-    //                      salvoSucessoMutableLiveData.postValue(new Boolean(true));
-    //                  }
-    //                }
-    //              @Override
+                      if (response.body() != null) {
+                          Log.d("RESPOSTA", "tenho resultado-->"+response.body());
+                          salvoSucessoMutableLiveData.postValue(new Boolean(true));
+                      }
+                    }
+                  @Override
 
-    //              public void onFailure(Call<ResponseBody> call, Throwable t) {
+                  public void onFailure(Call<ResponseBody> call, Throwable t) {
 
-    //                  Log.e("RESPOSTA", "FALHOU->"+t.getMessage());
-    //                  salvoSucessoMutableLiveData.postValue(new Boolean(false));
-    //              }
-    //          });
-    // }
+                      Log.e("RESPOSTA", "FALHOU->"+t.getMessage());
+                      salvoSucessoMutableLiveData.postValue(new Boolean(false));
+                  }
+              });
+     }
     public Call<ResponseBody> deletarLocal(Local local){
         return localService.deletarLocal(local.getData());
     }

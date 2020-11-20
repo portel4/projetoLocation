@@ -12,18 +12,18 @@ import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface LocalService {
-    @GET("/api/acb3b6508fa1460f86d1bb8826ae1b73/local")
+    @GET("/api/226256c86644444da722e404723d7a5f/local")
     Call<List<Local>> getAllLocais();
-    @POST("/api/acb3b6508fa1460f86d1bb8826ae1b73/local")
+    @POST("/api/226256c86644444da722e404723d7a5f/local")
     Call<ResponseBody> salvarLocal(
             @Body
                     Local local);
-    @PUT("/api/acb3b6508fa1460f86d1bb8826ae1b73/local/{data}")
+    @PUT("/api/226256c86644444da722e404723d7a5f/local/{data}")
     Call<ResponseBody> alterarLocal(
             @Path("data") String data,
             @Body LocalPut localPut);
 
-    @DELETE("/api/acb3b6508fa1460f86d1bb8826ae1b73/local/{data}")
+    @DELETE("/api/226256c86644444da722e404723d7a5f/local/{data}")
     Call<ResponseBody> deletarLocal(
             @Path("data") String data);
 }

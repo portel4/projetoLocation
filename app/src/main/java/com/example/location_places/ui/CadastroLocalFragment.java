@@ -100,7 +100,7 @@ public class CadastroLocalFragment extends Fragment {
         buttonSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                salvar();
+                salvarLocal(v);
             }
         });
 
@@ -155,7 +155,7 @@ public class CadastroLocalFragment extends Fragment {
         }
     }
 
-    public void salvar() {
+    public void salvarLocal(View v) {
         
         if(localCorrente == null){
             localCorrente = new Local();

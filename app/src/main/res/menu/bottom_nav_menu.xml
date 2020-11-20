@@ -6,7 +6,7 @@
         android:title="Locais"
         />
 
-    <item android:id="@+id/inserir"
+    <item android:id="@+id/inserirLocal"
         android:icon="@drawable/ic_add_location_black_18dp"
         android:title="Inserir"
         />

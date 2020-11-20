@@ -66,6 +66,7 @@ public class LocaisFragment extends Fragment {
                 if (locaisList != null) {
                     adapter.setResults(locaisList);
                 }
+
                 progressBar.setVisibility(View.GONE);
             }
         });
@@ -74,8 +75,8 @@ public class LocaisFragment extends Fragment {
             public void onItemClick(int position, Local local) {
                 replaceFragment(R.id.frameLayoutMain,
                         CadastroLocalFragment.newInstance("",local),
-                        "FRAGMENTLOCAL",
-                        "local_click");
+                        "LOCAISFRAGMENT",
+                        "LOCAIS");
             }
         });
     }

@@ -6,7 +6,9 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 
 public class LocalPut implements Serializable {
-
+    @SerializedName("_data")
+    @Expose
+    private String data;
     @SerializedName("descricao")
     @Expose
     private String descricao;
@@ -18,10 +20,19 @@ public class LocalPut implements Serializable {
     private String longitude;
 
 
-    public LocalPut(String descricao, String latitude, String longitude) {
+    public LocalPut(String data, String descricao, String latitude, String longitude) {
+        this.data = data;
         this.descricao = descricao;
         this.latitude = latitude;
         this.longitude = longitude;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
     }
 
     public String getDescricao() {

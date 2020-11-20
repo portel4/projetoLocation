@@ -40,9 +40,9 @@ public class MainActivity extends AppCompatActivity {
                                 "LOCAIS");
                         return true;
 
-                    case R.id.inserir:
+                    case R.id.inserirLocal:
                         replaceFragment(R.id.frameLayoutMain,
-                                LocaisFragment.newInstance("",null),
+                                CadastroLocalFragment.newInstance("",null),
                                 "INSERIRLOCAISFRAGMENT",
                                 "INSERIRLOCAIS");
                         return true;

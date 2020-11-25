@@ -1,7 +1,9 @@
 package com.example.location_places.ui;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.media.Image;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -10,9 +12,12 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethod;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -24,6 +29,7 @@ import com.example.location_places.model.Local;
 import com.example.location_places.model.LocalViewModel;
 import com.example.location_places.model.Usuario;
 import com.example.location_places.model.UsuarioViewModel;
+import com.example.location_places.util.ImageUtil;
 import com.orhanobut.hawk.Hawk;
 
 import java.util.List;
@@ -72,6 +78,7 @@ public class CadastroLocalFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = (Local)getArguments().getSerializable(ARG_PARAM2);
         }
+        localCorrente = new Local();
     }
 
     @Override
@@ -100,7 +107,7 @@ public class CadastroLocalFragment extends Fragment {
         buttonSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                salvarLocal(v);
+                salvarLocal();
             }
         });
 
@@ -124,6 +131,7 @@ public class CadastroLocalFragment extends Fragment {
             editTextDescricao.setText(localCorrente.getDescricao());
             editTextLatitude.setText(localCorrente.getLatitude());
             editTextLongitude.setText(localCorrente.getLongitude());
+            fotoLocal.setImageBitmap(ImageUtil.decode(localCorrente.getImagem()));
         }
 
 
@@ -149,17 +157,14 @@ public class CadastroLocalFragment extends Fragment {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
             fotoLocal.setImageBitmap(imageBitmap);
-            //contato corrente...
-            //Log.d...
+            localCorrente.setImagem(ImageUtil.encode(imageBitmap));
+            Log.d("IMAGEMBITMAPENCODED-->", localCorrente.getImagem());
 
         }
     }
 
-    public void salvarLocal(View v) {
-        
-        if(localCorrente == null){
-            localCorrente = new Local();
-        }
+    public void salvarLocal() {
+
         if (validarCampos()){
             localCorrente.setData(editTextData.getText().toString());
             localCorrente.setDescricao(editTextDescricao.getText().toString());
@@ -181,6 +186,7 @@ public class CadastroLocalFragment extends Fragment {
         editTextDescricao.setText("");
         editTextLatitude.setText("");
         editTextLongitude.setText("");
+        fotoLocal.setImageResource(R.drawable.ic_place_holder);
 
     }
 

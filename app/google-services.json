@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "647418896181",
+    "firebase_url": "https://location-places-f601b.firebaseio.com",
+    "project_id": "location-places-f601b",
+    "storage_bucket": "location-places-f601b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:647418896181:android:6f0bb1754419c52078f67c",
+        "android_client_info": {
+          "package_name": "com.example.location_places"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "647418896181-9nec16t2tlr641emk2vhervao0pf1pe1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4usH6S6ozZJNOqsdSVgf8o8apgKeq-JY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "647418896181-9nec16t2tlr641emk2vhervao0pf1pe1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

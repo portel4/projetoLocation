@@ -47,12 +47,6 @@ public class MainActivity extends AppCompatActivity {
                                 "INSERIRLOCAIS");
                         return true;
 
-                    case R.id.onde:
-                        replaceFragment(R.id.frameLayoutMain,
-                                new OndeEstouFragment(),
-                                "ONDEFRAGMENT",
-                                "ONDEESTOU");
-                        return true;
                 }
 
 

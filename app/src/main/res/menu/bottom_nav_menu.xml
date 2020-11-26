@@ -11,9 +11,4 @@
         android:title="Inserir"
         />
 
-    <item android:id="@+id/onde"
-        android:icon="@drawable/ic_onde"
-        android:title="Onde estou?"
-        />
-
 </menu>

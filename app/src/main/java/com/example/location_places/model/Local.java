@@ -19,16 +19,6 @@ public class Local implements Serializable {
     @Expose
     private String longitude;
     @SerializedName("imagem")
-    @Expose
-    private String imagem;
-
-    public String getImagem() {
-        return imagem;
-    }
-
-    public void setImagem(String imagem) {
-        this.imagem = imagem;
-    }
 
     public String getData() {
         return data;

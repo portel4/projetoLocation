@@ -19,25 +19,12 @@ public class LocalPut implements Serializable {
     @Expose
     private String longitude;
 
-    @SerializedName("imagem")
-    @Expose
-    private String imagem;
 
-    public String getImagem() {
-        return imagem;
-    }
-
-    public void setImagem(String imagem) {
-        this.imagem = imagem;
-    }
-
-
-    public LocalPut(String data, String descricao, String latitude, String longitude, String imagem) {
+    public LocalPut(String data, String descricao, String latitude, String longitude) {
         this.data = data;
         this.descricao = descricao;
         this.latitude = latitude;
         this.longitude = longitude;
-        this.imagem = imagem;
     }
 
     public String getData() {

@@ -6,6 +6,8 @@ import android.graphics.Bitmap;
 import android.media.Image;
 import android.os.Bundle;
 
+import androidx.annotation.IdRes;
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
@@ -14,6 +16,7 @@ import androidx.lifecycle.ViewModelProvider;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethod;
@@ -30,6 +33,7 @@ import com.example.location_places.model.LocalViewModel;
 import com.example.location_places.model.Usuario;
 import com.example.location_places.model.UsuarioViewModel;
 import com.example.location_places.util.ImageUtil;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.orhanobut.hawk.Hawk;
 
 import java.util.List;
@@ -50,8 +54,7 @@ public class CadastroLocalFragment extends Fragment {
     private EditText editTextLatitude;
     private EditText editTextLongitude;
     private Button buttonSalvar;
-    private ImageView fotoLocal;
-    private TextView linkLocal;
+    private Button buttonVoltar;
 
 
     // TODO: Rename and change types of parameters
@@ -95,19 +98,20 @@ public class CadastroLocalFragment extends Fragment {
         editTextDescricao = view.findViewById(R.id.editTextDescricao);
         editTextLatitude = view.findViewById(R.id.editTextLat);
         editTextLongitude = view.findViewById(R.id.editTextLong);
-        fotoLocal = view.findViewById(R.id.fotoLocal);
-        linkLocal = view.findViewById(R.id.linkLocal);
-        linkLocal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                captureFoto();
-            }
-        });
         buttonSalvar = view.findViewById(R.id.btnSalvar);
+        buttonVoltar = view.findViewById(R.id.btnVoltar);
+
         buttonSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 salvarLocal();
+            }
+        });
+
+        buttonVoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                voltar();
             }
         });
 
@@ -131,36 +135,41 @@ public class CadastroLocalFragment extends Fragment {
             editTextDescricao.setText(localCorrente.getDescricao());
             editTextLatitude.setText(localCorrente.getLatitude());
             editTextLongitude.setText(localCorrente.getLongitude());
-            fotoLocal.setImageBitmap(ImageUtil.decode(localCorrente.getImagem()));
         }
 
 
 
-    }
-
-    public void captureFoto(){
-        dispatchTakePictureIntent();
     }
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
-
-    private void dispatchTakePictureIntent() {
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (takePictureIntent.resolveActivity(getActivity().getPackageManager()) != null) {
-            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-        }
-    }
 
     @Override
     public void onActivityResult(int  requestCode , int  resultCode , Intent  data ){
         if (requestCode == 1 && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
-            fotoLocal.setImageBitmap(imageBitmap);
-            localCorrente.setImagem(ImageUtil.encode(imageBitmap));
-            Log.d("IMAGEMBITMAPENCODED-->", localCorrente.getImagem());
 
         }
+    }
+
+    protected void replaceFragment(@IdRes int containerViewId,
+                                   @NonNull Fragment fragment,
+                                   @NonNull String fragmentTag,
+                                   @Nullable String backStackStateName) {
+
+        getActivity().getSupportFragmentManager()
+                .beginTransaction()
+                .replace(containerViewId, fragment, fragmentTag)
+                .addToBackStack(backStackStateName)
+                .commit();
+    }
+
+
+    public void voltar(){
+        replaceFragment(R.id.frameLayoutMain,
+                LocaisFragment.newInstance("",""),
+                "LOCAISFRAGMENT",
+                "LOCAIS");
     }
 
     public void salvarLocal() {
@@ -186,8 +195,6 @@ public class CadastroLocalFragment extends Fragment {
         editTextDescricao.setText("");
         editTextLatitude.setText("");
         editTextLongitude.setText("");
-        fotoLocal.setImageResource(R.drawable.ic_place_holder);
-
     }
 
     public Boolean validarCampos(){

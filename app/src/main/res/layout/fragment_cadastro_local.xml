@@ -26,27 +26,8 @@
 
     <!--na linha 94 precisa mudar o onclick para Voltar (necessario criar func)-->
 
-    <ImageView
-        android:id="@+id/fotoLocal"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/ic_place_holder"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTitulo" />
-
-    <TextView
-        android:id="@+id/linkLocal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="Clique aqui para adicionar uma foto"
-        android:textColor="@color/azulescuro"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fotoLocal"/>
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
 
     <EditText
         android:id="@+id/editTextData"
@@ -60,7 +41,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linkLocal" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitulo" />
 
     <EditText
         android:id="@+id/editTextDescricao"
@@ -118,5 +99,20 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextLong" />
+
+    <Button
+        android:id="@+id/btnVoltar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:background="@color/fundoFaixa"
+        android:text="Voltar"
+        android:textColor="@color/cinzaLetra"
+        android:textSize="10pt"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSalvar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

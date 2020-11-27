@@ -77,7 +77,7 @@ public class LocalRepository {
     }
     public void alterarLocal(Local local){
         LocalPut localPut = new LocalPut(local.getData(), local.getDescricao(),local.getLatitude(),
-                local.getLongitude(), local.getImagem());
+                local.getLongitude());
          localService.alterarLocal(local.getData(),localPut)
                .enqueue(new Callback<ResponseBody>() {
                    @Override

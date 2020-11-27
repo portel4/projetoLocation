@@ -33,8 +33,6 @@ public class LocalAdapter extends RecyclerView.Adapter<LocalAdapter.LocalHolder>
         holder.textViewDescricao.setText(local.getDescricao());
         holder.textViewLatitude.setText(local.getLatitude());
         holder.textViewLongitude.setText(local.getLongitude());
-        holder.fotoLocalCard.setImageBitmap(ImageUtil.decode(local.getImagem()));
-
     }
 
     @Override
@@ -50,9 +48,6 @@ public class LocalAdapter extends RecyclerView.Adapter<LocalAdapter.LocalHolder>
         private TextView textViewDescricao;
         private TextView textViewLatitude;
         private TextView textViewLongitude;
-        private ImageView fotoLocalCard;
-
-
 
         public LocalHolder(@NonNull View itemView) {
             super(itemView);
@@ -60,7 +55,6 @@ public class LocalAdapter extends RecyclerView.Adapter<LocalAdapter.LocalHolder>
             textViewDescricao = itemView.findViewById(R.id.textViewDescricaoLocal);
             textViewLatitude = itemView.findViewById(R.id.textViewLatitudeLocal);
             textViewLongitude = itemView.findViewById(R.id.textViewLongitudeLocal);
-            fotoLocalCard = itemView.findViewById(R.id.fotoLocalCard);
             itemView.setOnClickListener(this);
         }
         @Override

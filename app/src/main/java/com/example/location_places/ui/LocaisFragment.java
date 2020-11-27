@@ -72,7 +72,7 @@ public class LocaisFragment extends Fragment {
         });
         adapter.setOnItemClickListener(new LocalAdapter.ItemClickListener() {
             @Override
-            public void onItemClick(int position, Local local) {
+        public void onItemClick(int position, Local local) {
                 replaceFragment(R.id.frameLayoutMain,
                         CadastroLocalFragment.newInstance("",local),
                         "LOCAISFRAGMENT",

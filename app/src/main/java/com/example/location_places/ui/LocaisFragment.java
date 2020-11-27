@@ -75,8 +75,8 @@ public class LocaisFragment extends Fragment {
         public void onItemClick(int position, Local local) {
                 replaceFragment(R.id.frameLayoutMain,
                         CadastroLocalFragment.newInstance("",local),
-                        "LOCAISFRAGMENT",
-                        "LOCAIS");
+                        "CADASTROLOCALFRAGMENT",
+                        "local_click");
             }
         });
     }

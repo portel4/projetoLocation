@@ -18,12 +18,12 @@ public interface LocalService {
     Call<ResponseBody> salvarLocal(
             @Body
                     Local local);
-    @PUT("/api/3eafeb9051014c4caba4afd6bcaece2b/local/{data}")
+    @PUT("/api/3eafeb9051014c4caba4afd6bcaece2b/local/{id}")
     Call<ResponseBody> alterarLocal(
-            @Path("data") String data,
+            @Path("id") String id,
             @Body LocalPut localPut);
 
-    @DELETE("/api/3eafeb9051014c4caba4afd6bcaece2b/local/{data}")
+    @DELETE("/api/3eafeb9051014c4caba4afd6bcaece2b/local/{id}")
     Call<ResponseBody> deletarLocal(
-            @Path("data") String data);
+            @Path("id") String id);
 }

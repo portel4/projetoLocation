@@ -3,6 +3,8 @@ package com.example.location_places.model;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 @Entity(tableName = "usuario")
 public class Usuario {
     @PrimaryKey(autoGenerate = true)
@@ -11,6 +13,7 @@ public class Usuario {
     private String cpf;
     private String email;
     private String senha;
+    private FirebaseAuth mAuth;
 
     public Usuario(String nome, String cpf, String email, String senha) {
         this.nome = nome;
@@ -18,6 +21,7 @@ public class Usuario {
         this.email = email;
         this.senha = senha;
     }
+    
 // gets e sets
 
     public Usuario(){}

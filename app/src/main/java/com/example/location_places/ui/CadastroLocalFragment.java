@@ -174,6 +174,10 @@ public class CadastroLocalFragment extends Fragment {
 
     public void salvarLocal() {
 
+        if(localCorrente == null){
+            localCorrente = new Local();
+        }
+
         if (validarCampos()){
             localCorrente.setData(editTextData.getText().toString());
             localCorrente.setDescricao(editTextDescricao.getText().toString());

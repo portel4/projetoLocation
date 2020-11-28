@@ -89,6 +89,7 @@ public class CadastroLocalFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_cadastro_local, container, false);
+
     }
 
     @Override
@@ -100,6 +101,8 @@ public class CadastroLocalFragment extends Fragment {
         editTextLongitude = view.findViewById(R.id.editTextLong);
         buttonSalvar = view.findViewById(R.id.btnSalvar);
         buttonVoltar = view.findViewById(R.id.btnVoltar);
+
+
 
         buttonSalvar.setOnClickListener(new View.OnClickListener() {
             @Override

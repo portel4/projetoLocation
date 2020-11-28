@@ -1,34 +1,42 @@
 {
   "project_info": {
-    "project_number": "647418896181",
-    "firebase_url": "https://location-places-f601b.firebaseio.com",
-    "project_id": "location-places-f601b",
-    "storage_bucket": "location-places-f601b.appspot.com"
+    "project_number": "505268271710",
+    "firebase_url": "https://locaisproj.firebaseio.com",
+    "project_id": "locaisproj",
+    "storage_bucket": "locaisproj.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:647418896181:android:6f0bb1754419c52078f67c",
+        "mobilesdk_app_id": "1:505268271710:android:413c399be19e22a9d012cf",
         "android_client_info": {
           "package_name": "com.example.location_places"
         }
       },
       "oauth_client": [
         {
-          "client_id": "647418896181-9nec16t2tlr641emk2vhervao0pf1pe1.apps.googleusercontent.com",
+          "client_id": "505268271710-6pqba0npo80amffhh321u9pl43pkj5s6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.location_places",
+            "certificate_hash": "4c48a8500fe4f032542fe525fd6e7438a7633412"
+          }
+        },
+        {
+          "client_id": "505268271710-metm5qt38h5dpa72q37pvjmjh1i54e4u.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC4usH6S6ozZJNOqsdSVgf8o8apgKeq-JY"
+          "current_key": "AIzaSyB-FzBL-RZcLDfHwdqF5rjGxftHsf9Q_Js"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "647418896181-9nec16t2tlr641emk2vhervao0pf1pe1.apps.googleusercontent.com",
+              "client_id": "505268271710-metm5qt38h5dpa72q37pvjmjh1i54e4u.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

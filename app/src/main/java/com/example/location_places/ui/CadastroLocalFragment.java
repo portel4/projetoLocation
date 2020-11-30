@@ -97,8 +97,8 @@ public class CadastroLocalFragment extends Fragment {
 
         editTextData = view.findViewById(R.id.editTextData);
         editTextDescricao = view.findViewById(R.id.editTextDescricao);
-        editTextLatitude = view.findViewById(R.id.editTextLat);
-        editTextLongitude = view.findViewById(R.id.editTextLong);
+        editTextLatitude = view.findViewById(R.id.txtLat);
+        editTextLongitude = view.findViewById(R.id.txtLong);
         buttonSalvar = view.findViewById(R.id.btnSalvar);
         buttonVoltar = view.findViewById(R.id.btnVoltar);
 

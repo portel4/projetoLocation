@@ -10,6 +10,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.example.location_places.R;
 import com.example.location_places.model.Local;
@@ -18,10 +21,20 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Date;
+import java.util.UUID;
+
 public class MainActivity extends AppCompatActivity {
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
+    private Local localCorrente;
+    private EditText editTextData;
+    private EditText editTextDescricao;
+    private EditText editTextLatitude;
+    private EditText editTextLongitude;
+    private Button buttonSalvar;
+    private Button buttonVoltar;
 
 
     @Override
@@ -74,18 +87,34 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+    public void onViewCreated(View view, @Nullable Bundle savedInstaceState) {
+
+        editTextData = view.findViewById(R.id.editTextData);
+        editTextDescricao = view.findViewById(R.id.editTextDescricao);
+        editTextLatitude = view.findViewById(R.id.txtLat);
+        editTextLongitude = view.findViewById(R.id.txtLong);
+        buttonSalvar = view.findViewById(R.id.btnSalvar);
+        buttonVoltar = view.findViewById(R.id.btnVoltar);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int data = item.getItemId();
-        if(data == R.id.textViewNovoCadastro){
+        if(data == R.id.editTextData){
+            Date hoje = new Date();
             Local l = new Local();
+            l.setData(hoje.toString()); // colocar aqui o set automático de Data;
+            l.setDescricao(editTextDescricao.getText().toString());
+            l.setLatitude(editTextLatitude.getText().toString());
+            l.setLongitude(editTextLongitude.getText().toString());
+            databaseReference.child("Local").child(l.getData()).setValue(l);
+            limparCampos();
 //https://www.youtube.com/watch?v=PE_riDivk6Y&ab_channel=Extraclasse 17:30
         }
 
@@ -102,6 +131,13 @@ public class MainActivity extends AppCompatActivity {
         return(super.onOptionsItemSelected(item));
     }
 
+    private void limparCampos(){
+        editTextData.setText("");
+        editTextDescricao.setText("");
+        editTextLatitude.setText("");
+        editTextLongitude.setText("");
+    }
+
     protected void replaceFragment(@IdRes int containerViewId,
                                    @NonNull Fragment fragment,
                                    @NonNull String fragmentTag,
@@ -112,4 +148,5 @@ public class MainActivity extends AppCompatActivity {
                 .addToBackStack(backStackStateName)
                 .commit();
     }
+
 }

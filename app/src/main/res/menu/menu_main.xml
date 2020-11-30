@@ -8,3 +8,4 @@
 
     <item android:id="@+id/sair" android:icon="@drawable/ic_exit" app:showAsAction="always|withText" android:title="Sair"/>
 </menu>
+
